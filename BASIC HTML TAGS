@@ -1,0 +1,95 @@
+HTML TAGS
+
+<html>  Defines the root of an HTML document.
+
+<head>  Contains meta-information about the HTML document, such as title, styles, and scripts.
+
+<title>  Sets the title of the HTML document, displayed in the browser's title bar or tab.
+
+<body>  Contains the content of the HTML document, including text, images, links, and other elements.
+
+<h1>, <h2>, <h3>, <h4>, <h5>, <h6>
+Defines headings of different sizes, with <h1> being the largest and <h6> the smallest.
+
+<p>  Defines a paragraph of text.
+
+<a>  Creates a hyperlink, linking to another webpage, file, or location within the same page.
+    Example: <a href="https://vecds.com">Visit VEC DATASCIENCE.com!</a>
+
+<img>  Inserts an image into the HTML document.
+        syntax:- <img  src="image.jpg"  alt="info" width="500" height="600"/>
+
+<div>  Defines a division or container for grouping HTML elements and applying CSS styles.
+
+<span> Defines an inline container for styling a specific portion of text or content.
+    Example: <p>My mother has <span style="color:blue">blue</span> eyes.</p>
+
+<ul>, <ol>  Creates an unordered or ordered list, respectively, containing list items (<li>).
+
+    <li>  Defines a list item within an unordered or ordered list.
+
+<table>  Creates a table for organizing data into rows and columns.
+
+    <tr>  Defines a table row within a <table> element.
+
+    <td>  Defines a table cell within a <tr> element.
+
+    <th>  Defines a header cell within a <tr> element in a table.
+   
+Example: <table>
+            <tr>
+              <th>Month</th>
+              <th>Savings</th>
+            </tr>
+            <tr>
+              <td>January</td>
+              <td>$100</td>
+          </tr>
+        </table>
+
+<label>  Associates a label with an input element, improving accessibility and usability.
+    example:-  <label for="fname">First name:</label>
+
+<input>  Defines an input control element within a form, such as text fields, checkboxes, or buttons.
+   example:-   <input type="text" id="fname" name="fname"><br><br>
+
+<button>  Defines a clickable button within a form or webpage.
+    example:-   <button type="button">Click Me!</button>
+
+<textarea>  Creates a multiline text input control within a form.
+   example:-  <textarea id="textarea" name="txtarea" rows="4" cols="50">
+              ....
+              </textarea>
+
+<form>   Creates an HTML form for collecting user input.
+Example:-    
+    <form action="/action_page.php" method="get">
+      <label for="fname">First name:</label>
+      <input type="text" id="fname" name="fname"><br><br>
+      <label for="lname">Last name:</label>
+      <input type="text" id="lname" name="lname"><br><br>
+      <input type="submit" value="Submit">
+  </form>
+
+
+<iframe>  Embeds another HTML page or external content within the current document.
+   Example:- <iframe src="https://www.google.com" title="Google"></iframe>
+
+<script>  Embeds or links to client-side scripts, such as JavaScript.
+    Example:-  <script>
+                  document.getElementById("demo").innerHTML = "Hello JavaScript!";
+                </script>
+
+<style>  Contains CSS rules for styling HTML elements within the document.
+Example:- <html>
+            <head>
+              <style>
+                h1 {color:red;}
+                p {color:blue;}
+              </style>
+            </head>
+            <body>
+            <h1>A heading</h1>
+            <p>A paragraph.</p>
+            </body>
+        </html>
