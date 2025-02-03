@@ -31,4 +31,20 @@ EXAMPLE:-
 
 https://drive.google.com/file/d/1Jx6tZhpEBr6oE2tqaOtfvUlEG90NU07W/view?usp=drive_link
 
+Web browsers render and display web pages based on the HTML tags in their code. 
+Here's how web pages read HTML tags:
+
+Parsing: When a web browser loads a webpage, it starts by parsing the HTML code. 
+        Parsing analyzes the HTML document and creates a structured representation of its contents, 
+        known as the Document Object Model (DOM).
+DOM Tree: The DOM tree represents the hierarchical structure of HTML elements, 
+        where each element is represented as a node with properties and attributes. 
+        The browser constructs the DOM tree by interpreting the HTML tags and their relationships, 
+        such as parent-child and sibling elements.
+Rendering: Once the DOM tree is constructed, the browser uses it to render the webpage on the screen. 
+        Rendering involves applying CSS styles, calculating layout, and painting pixels based on the 
+        content and properties of HTML elements.
+Event Handling: Web browsers also handle user interactions and dynamic content updates based on JavaScript 
+        code associated with HTML elements. Event listeners attached to HTML tags respond to user actions 
+        such as clicks, mouse movements, and keyboard inputs.
 
