@@ -99,8 +99,8 @@ Build a responsive web application for shopping cart with registration, login, c
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>SHOPPING CART</h1>
-    <h2>T-shirts Catalog</h2>
+     <center><h1>SHOPPING CART</h1>
+    <h2>T-shirts Catalog</h2></center>
     <div class="container">
       <div class="product-card">
         <div class="product-image">
