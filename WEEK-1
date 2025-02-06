@@ -33,7 +33,7 @@ Build a responsive web application for shopping cart with registration, login, c
                 <input type="checkbox" name="python">Python &nbsp;&nbsp;
                 <input type="checkbox" name="c">C &nbsp;&nbsp;
                 <input type="checkbox" name="java">Java <br><br>
-                <input type="button" value="submit" onclick="window.location.href='./loginform.html'">
+                <input type="button" value="submit" onclick="window.location.href='./LOGIN.html'">
                 <input type="reset" value="reset">
         
     </div>
@@ -70,7 +70,7 @@ Build a responsive web application for shopping cart with registration, login, c
     <br><br><br><br><br><br><br><br>
     <center>
     <div class="form" style="align-items: center;">
-    <form action="./catalog.html">
+    <form action="./SHOPPING_CART.html">
         <h1 style="color: crimson;">LOGIN FORM</h1>
         Username:
         <input type="text" name="username"><br><br>
@@ -154,7 +154,7 @@ Build a responsive web application for shopping cart with registration, login, c
         </div>
       </div>
     </div>
-    <center><button class="add-to-cart" onclick="window.location.href='./cart.html';">checkout</button> 
+    <center><button class="add-to-cart" onclick="window.location.href='./CART.html';">checkout</button> 
   </center>
   </body>
 </html>
@@ -226,7 +226,7 @@ Build a responsive web application for shopping cart with registration, login, c
         </div>
       </div>
     </div>
-    <center><button class="add-to-cart" onclick="window.location.href='./registrationform.html';">Payment</button> </center>
+    <center><button class="add-to-cart" onclick="window.location.href='./REGISTRATION.html';">Payment</button> </center>
 
 </html>
 
