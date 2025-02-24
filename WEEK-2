@@ -55,7 +55,8 @@ To  include Bootstrap into our webpages  use <link> tag as follows..
                 <input type="checkbox" class="form-check-input" name="python">Python &nbsp;&nbsp;
                 <input type="checkbox" class="form-check-input" name="c">C &nbsp;&nbsp;
                 <input type="checkbox" class="form-check-input" name="java">Java <br><br>
-                <input type="button" class="btn btn-primary" value="submit" onclick="window.location.href='./login.html'">
+                <input type="button" class="btn btn-primary" value="submit" 
+                        onclick="window.location.href='./login.html'">
                 <input type="reset" class="btn btn-secondary" value="reset">
         
         </form>
@@ -90,8 +91,9 @@ To  include Bootstrap into our webpages  use <link> tag as follows..
             </div>
               <br>
               <button type="button" class="btn btn-primary" 
-                            onclick="window.location.href='./registration.html'">Login</button>
-                <button type="button" class="btn btn-secondary">Register</button>
+                            onclick="window.location.href='./shoppingcart.html'">Login</button>
+                <button type="button" class="btn btn-secondary"
+                            onclick="window.location.href='./registration.html'">Register</button>
            </div>
         </form>
   </center>
