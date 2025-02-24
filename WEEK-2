@@ -1,0 +1,100 @@
+2.	Make the above web application responsive web application using Bootstrap framework.
+
+Bootstrap is a free, open source front-end development framework for the creation of websites and web apps. 
+Designed to enable responsive development of mobile-first websites, Bootstrap provides a collection of 
+syntax for template designs. Its collection of HTML, CSS, and JS components facilitates faster and easier 
+development of websites and web applications.
+
+Reason to choose Bootstrap:
+•	Faster and Easier Web-Development.
+•	It creates Platform-independent web-pages.
+•	It creates Responsive Web-pages.
+•	It’s designed to be responsive to mobile devices too.
+
+Bootstrap comprises of mainly three components:
+•	CSS
+•	Fonts
+•	JavaScript
+
+Installing Bootstrap:
+•	Step 1: Goto www.getbootstrap.com and click Getting Started. 
+Click on the Download Bootstrap button and download the compiled CSS and JS.
+
+Step 2: A .zip file would get downloaded. Extract it and go into the distribution folder. You would see 2 folders named CSS and JS. You can make your HTML file there and then you must paste these links in their respective sections.
+
+To  include Bootstrap into our webpages  use <link> tag as follows..
+<link rel=”stylesheet” type=”text/css” href=”css/bootstrap.css”> 
+
+*******************
+|registration.html|
+*******************
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Bootstrap Registration Page</title>
+        <link rel="Stylesheet" href="./bootstrap.css">
+       
+    </head>
+    <body style="background-color: aqua;"><br><br>
+        <center>
+        <form class="form-control" >
+                                    
+                <h1><u>Registration Form</u></h1><br>
+                First name:<input type="text" class="form-text" name="fname"><br><br>
+                Last name:<input type="text" class="form-text" name="lname"><br><br>
+                email id:<input type="email" class="form-text" name="mailid"><br><br>
+                Password:<input type="password" class="form-text" name="password"><br><br>
+                Gender:<input type="radio" class="form-check-input" name="gender">Male 
+                <input type="radio" class="form-check-input" name="gender">Female <br><br>
+                Phone Number:
+                <input type="number" class="form-text" name="Phone" maxlength="10"><br><br>
+                Address:
+                <textarea name="Address" rows="3"columns="6"></textarea> <br><br>
+                Known Language:
+                <input type="checkbox" class="form-check-input" name="python">Python &nbsp;&nbsp;
+                <input type="checkbox" class="form-check-input" name="c">C &nbsp;&nbsp;
+                <input type="checkbox" class="form-check-input" name="java">Java <br><br>
+                <input type="button" class="btn btn-primary" value="submit" onclick="window.location.href='./login.html'">
+                <input type="reset" class="btn btn-secondary" value="reset">
+        
+        </form>
+        </center>
+    </body>
+</html>
+
+
+************
+|login.html|
+************
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap Login Form</title>
+    <link rel="stylesheet" href="bootstrap.css"> 
+</head>
+
+<body style="background-color: skyblue;">
+    <div class="container" >
+        <center><br><br><br><br><br> 
+        <form class="form-control">
+            <h4><u>Bootstrap Login Form</u></h4>
+            <br>
+            <div class="form-group">
+                <label >User Name : </label>
+                <input type="text" class="form-text" placeholder="Enter your User Name">
+            </div>
+            <div class="form-group">
+                <label  >Password :</label>&nbsp;&nbsp;&nbsp;
+                <input type="password" class="form-text" placeholder="Enter your password">
+            </div>
+              <br>
+              <button type="button" class="btn btn-primary" 
+                            onclick="window.location.href='./registration.html'">Login</button>
+                <button type="button" class="btn btn-secondary">Register</button>
+           </div>
+        </form>
+  </center>
+</body>
+</html>
+
