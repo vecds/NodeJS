@@ -1,15 +1,19 @@
 3.	Use JavaScript for doing client-side validation of the pages implemented in experiment 1 and experiment 2.
 
-Form validation in web forms is to ensure that the data entered by users meets the specific requirements before it is sent to a web server. When users submit forms with errors, form validation provides error messages that guide them to correct their entry.
-This process of validation uses a mix of HTML5 attributes, JavaScript code, and client-side validation to ensure comprehensive data validation.
+Form validation in web forms is to ensure that the data entered by users meets the specific requirements before it 
+    is sent to a web server. When users submit forms with errors, form validation provides error messages that 
+    guide them to correct their entry. This process of validation uses a mix of HTML5 attributes, JavaScript code, 
+    and client-side validation to ensure comprehensive data validation.
 JavaScript is the Programming Language for the Web.
 JavaScript can calculate, manipulate and validate data.
+
 JavaScript variables can be:
 •	Numbers
 •	Strings
 •	Objects
 •	Arrays
 •	Functions
+
 JavaScript variables are containers for storing data values.
 Example
 var x = 5;
@@ -39,8 +43,10 @@ function myFunction(p1, p2) {
     return p1 * p2;              // The function returns the product of p1 and p2
 }
 
+**************
+| Login.html |
+**************
 
-Login.html
 <!DOCTYPE html>
 <html>
 <head>
@@ -91,7 +97,9 @@ else if(password.length<6)
 </body>
 </html>
 
-Registration.html
+*********************
+| Registration.html |
+*********************
 <html>
 <head>
     <title> Welcome to website</title>
