@@ -1,0 +1,238 @@
+3.	Use JavaScript for doing client-side validation of the pages implemented in experiment 1 and experiment 2.
+
+Form validation in web forms is to ensure that the data entered by users meets the specific requirements before it is sent to a web server. When users submit forms with errors, form validation provides error messages that guide them to correct their entry.
+This process of validation uses a mix of HTML5 attributes, JavaScript code, and client-side validation to ensure comprehensive data validation.
+JavaScript is the Programming Language for the Web.
+JavaScript can calculate, manipulate and validate data.
+JavaScript variables can be:
+•	Numbers
+•	Strings
+•	Objects
+•	Arrays
+•	Functions
+JavaScript variables are containers for storing data values.
+Example
+var x = 5;
+var y = 6;
+var z = x + y;
+
+-JavaScript has only one type of number. Numbers can be written with or without decimals.
+var x = 3.14;    // A number with decimals
+var y = 3;       // A number without decimals
+
+-Strings store text. Strings are written inside quotes. You can use single or double quotes:
+Example
+var carname = "Volvo XC60";  // Double quotes
+var carname = 'Volvo XC60';  // Single quotes
+
+-Objects are variables too. But objects can contain many values.
+var car = {type:"Fiat", model:"500", color:"white"};
+
+-JavaScript arrays are used to store multiple values in a single variable.
+var cars = ["Saab", "Volvo", "BMW"];
+
+
+A JavaScript function is a block of code designed to perform a particular task.
+A JavaScript function is executed when "something" invokes it (calls it).
+Example:	
+function myFunction(p1, p2) {
+    return p1 * p2;              // The function returns the product of p1 and p2
+}
+
+
+Login.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LOGIN FORM</title>
+    <style>
+        div
+        {                       
+            border-style: solid;
+            border-color: black;
+            background-color: lightgreen;
+            width: 400px;
+            height: 230px;
+         }
+    </style>
+    <script>  
+        function validateform()
+ {  
+        var name=document.form.username.value;  
+        var password=document.form.password.value;  
+          
+        if (name==null || name=="")
+{  
+          	alert("Name can't be blank");  
+         	 return false;  
+ }
+else if(password.length<6)
+{  
+      	    alert("Password must be at least 6 characters long.");  
+        	  return false;  }          }          </script>  
+</head>
+<body style="background-color: lightpink">
+    <br><br><br><br><br><br><br><br>
+    <center>
+    <div class="myform" style="align-items: center;" >
+    <form name="form" action="./registrationform.html" method="post" onsubmit="return validateform()">
+        <h1 style="color: red;">LOGIN FORM</h1>
+        Username:
+        <input type="text" name="username"><br><br>
+        Password:
+        <input type="password" name="password"><br><br><br>
+
+        <input type="submit" value="Signin">
+        <input type="button" value="Cancel">
+        
+    </form>
+</div>
+    </center>
+</body>
+</html>
+
+Registration.html
+<html>
+<head>
+    <title> Welcome to website</title>
+    <script language="javascript">
+    function validate() {
+        // username validation
+        var uname = f1.username.value;
+        if (uname.length<=0)
+        {
+            alert("Please Enter UserName");
+            f1.username.focus();
+            return false;
+        }
+        if (uname.length < 8)
+        {
+            alert("Please enter UserName not less than 8");
+            f1.username.focus();
+            return false;        }
+        //password validation
+        var pwd = f1.password.value;
+        if (pwd.length<=0)
+        {
+            alert("Please Enter password");
+            f1.password.focus();
+            return false;
+        }
+        if (pwd.length < 6)
+        {
+            alert("Please enter Password not less than 6");
+            f1.password.focus();
+            return false;
+        }
+        // email validation
+        var email = f1.email.value;
+        if (email.length<=0)
+        {
+            alert("Please Enter email");
+            f1.email.focus();
+            return false;
+        }
+        else {
+            let eflag=false;
+            for(i=0;i<email.length;i++) {
+                if(email.charAt(i)=="@") 
+                    { 
+                        eflag=true;
+                    }
+            }
+                if(!(eflag)) 
+                { 
+                    alert("Please enter a valid Email ID"); 
+                    f1.email.focus(); 
+                    return false; 
+                }
+        }
+        // phone number validation
+        var phno = f1.phno.value;
+        if (phno.length<=0)
+        {
+            alert("Please Enter Phone Number");
+            f1.phno.focus();
+            return false;
+        }
+        if (isNaN(phno))
+        {
+            alert("Please Enter Valid Phone Number");
+            f1.phno.focus();
+            
+            return false;
+        }
+        if (phno.length != 10)
+        {
+            alert("Please Enter Valid Phone Number");
+            f1.phno.focus();
+            return false;
+        }
+        // gender validation
+        let flag=false; 
+        for(i=0;i<f1.gen.length;i++) 
+            if(f1.gen[i].checked)
+                flag=true; 
+        if(!(flag)) 
+        { 
+        alert("Please choose a Gender"); 
+        return false; 
+        }
+        // Language validation
+        flag=false; 
+        for(i=0;i<f1.lang.length;i++) 
+            if(f1.lang[i].checked)
+                flag=true; 
+        if(!(flag)) 
+        { 
+        alert("Please select at least one of the Language options."); 
+        return false; 
+        }
+        // address validation
+        var addr = f1.address.value;
+        if (addr.length<=0)
+        {
+            alert("Please Enter address");
+            f1.address.focus();
+            return false;
+        }
+        // to display Success message
+        alert("Registration Successful");
+    }
+    </script>
+</head>
+<body>
+<center><br>
+    <h3>Registration Form </h3>
+    <br/>
+    <form name="f1">
+    <table cellpadding="1" align="center" >
+    <tr><td> User Name:*</td>
+    <td><input type="text" name="username"></td></tr>
+    <tr><td>Password:*</td>
+    <td><input type="password" name="password"></td></tr>
+    <tr><td>Email ID:*</td>
+    <td><input type="text" name="email"></td></tr>
+    <tr><td>Phone Number:*</td>
+    <td><input type="text" name="phno"></td></tr>
+    <tr><td valign="top">Gender:*</td>
+    <td><input type="radio" name="gen" value="Male">Male &nbsp;&nbsp;
+    <input type="radio" name="gen" value="Female">Female</td></tr>
+    <tr> <td valign="top">Language Known:*</td>
+    <td> <input type="checkbox" name="lang" value="English">English<br/> 
+    <input type="checkbox" name="lang" value="Telugu">Telugu<br>
+    <input type="checkbox" name="lang" value="Hindi">Hindi<br>
+    <input type="checkbox" name="lang" value="Tamil">Tamil
+    </td></tr>
+    <tr> <td valign="top">Address:*</td>
+    <td><textarea name="address"></textarea></td>
+    <tr><td></td><td><input type="button" value="SUBMIT" hspace="10" onclick="validate()">
+    <input type="reset" value="RESET"></td></tr>
+    <tr> <td colspan=2 >*<font color="#FF0000">fields are mandatory</font>
+    </td>
+    </tr>
+    </table>
+    </form>
+</center>
+</body>
+</html>
