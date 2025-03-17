@@ -4,7 +4,7 @@ HTML is widely used language on the web.
 We can create a static website by HTML only.
 HTML was first created by Tim Berners-Lee, Robert Cailliau, and others starting in 1989.
 Technically, HTML is a Markup language rather than a programming language.
-Hypertext means that the document contains links that allow the reader to jump to other places in the 
+Hypertext means that the document contains links that  allow the reader to jump to other places in the 
 document or to another document altogether. 
 A markup language is a system of symbols that defines the structure and formatting of a document.
 It uses tags to mark up elements within a document, such as headings, paragraphs, and concepts.
