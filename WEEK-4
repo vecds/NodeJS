@@ -1,0 +1,241 @@
+4.	Explore the features of ES6 like arrow functions, callbacks, promises, async/await. 
+    Implement an application for reading the weather information from openweathermap.org and 
+    display the information in the form of a graph on the webpage.
+
+JavaScript was invented by Brendan Eich in 1995, and became an ECMA standard in 1997.
+
+ECMAScript is the official name of the language.
+
+ECMAScript versions have been abbreviated to ES1, ES2, ES3, ES5, and ES6.
+
+Since 2016, versions are named by year (ECMAScript 2016, 2017, 2018, 2019, 2020).
+
+ECMAScript 2015 was the second major revision to JavaScript.
+
+ECMAScript 2015 is also known as ES6 and ECMAScript 6.
+
+New Features in ES6
+The let keyword
+The const keyword
+Arrow Functions
+
+The let keyword allows you to declare a variable with block scope.
+
+Example:
+var x = 10;
+// Here x is 10
+{
+  let x = 2;
+  // Here x is 2
+}
+// Here x is 10
+
+JavaScript const:
+The const keyword allows you to declare a constant (a JavaScript variable with a constant value).
+
+Constants are similar to let variables, except that the value cannot be changed.
+
+Example
+var x = 10;
+// Here x is 10
+{
+  const x = 2;
+  // Here x is 2
+}
+// Here x is 10
+
+
+Arrow Functions:
+Arrow functions allows a short syntax for writing function expressions.
+
+You don't need the function keyword, the return keyword, and the curly brackets.
+
+Example
+// ES5
+var x = function(x, y) {
+   return x * y;
+}
+
+// ES6
+const x = (x, y) => x * y;
+
+Callbacks:
+  JavaScript functions are executed in the sequence they are called. Not in the sequence they are defined.
+
+  This example will end up displaying "Goodbye":
+
+Example
+function myFirst() {
+  myDisplayer("Hello");
+}
+
+function mySecond() {
+  myDisplayer("Goodbye");
+}
+myFirst();
+mySecond();
+
+Promices:
+  A promise in JavaScript is like a container for a future value. It is a way of saying, 
+  “I don’t have this value right now, but I will have it later.”
+
+  a promise lets you keep working with your code while waiting for something else to finish, 
+  like loading data from a server. When the data is ready, the promise will deliver it.
+
+  A promise can be in one of three states:
+
+  Pending: The promise is waiting for something to finish. For example, waiting for data to load from a website.
+  Fulfilled: The promise has been completed successfully. The data you were waiting for is now available.
+  Rejected: The promise has failed. Maybe there was a problem, like the server not responding.
+
+  When you create a promise, you write some code that will eventually tell the promise whether it was successful 
+  (fulfilled) or not (rejected).
+  Syntax:
+  let promise = new Promise(function(resolve, reject){
+     //do something
+    });
+
+  let myPromise = new Promise(function(resolve, reject) {
+  // some code that takes time, like loading data
+  let success = true; // change this to false to check error
+
+  if (success) {
+    resolve("The data has loaded successfully!");
+  } else {
+    reject("There was an error loading the data.");
+  }
+  });
+
+let promise = new Promise(function (resolve, reject) {
+    const x = "VAAGDEVIAN";
+    const y = "VAAGDEVIAN"
+    if (x === y) {
+        resolve();
+    } else {
+        reject();
+    }
+  });
+
+promise.
+    then(function () {
+        console.log('Success, You are a Vaagdevian');
+    }).
+    catch(function () {
+        console.log('Some error has occurred');
+    }); 
+
+
+<<WEATHER REPORT WEBPAGE>>
+**************
+| Index.html |
+**************
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather App</h1>
+        <input type="text" id="locationInput" placeholder="Enter a city">
+        <button id="searchButton">Search</button>
+        <div class="weather-info">
+            <h2 id="location"></h2>
+            <p id="temperature"></p>
+            <p id="description"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+**************
+| styles.css |
+**************
+body {
+    font-family: Arial, sans-serif;
+    background-position: center;
+    height: 500px;
+    background-image: url("premium_photo-1681488098851-e3913f3b1908.jpg");
+    background-size: cover;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+    margin-top: 105px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.weather-info {
+    margin-top: 20px;	}
+//Create an account in openweatherapp and Goto My API Key and copy key value.
+
+*************
+| script.js |
+*************
+
+const apiKey = '653968ca99e50f93307d8be02d8a4a25';
+const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
+
+const locationInput = document.getElementById('locationInput');
+const searchButton = document.getElementById('searchButton');
+const locationElement = document.getElementById('location');
+const temperatureElement = document.getElementById('temperature');
+const descriptionElement = document.getElementById('description');
+
+searchButton.addEventListener('click', () => {
+    const location = locationInput.value;
+    if (location) {
+        fetchWeather(location);
+    }
+});
+
+function fetchWeather(location) {
+    const url = `${apiUrl}?q=${location}&appid=${apiKey}&units=metric`;
+   //the query parameters appear on the right side of the ‘?’ in the URL, 
+    //path parameters come before the question mark sign.
+    //?-The question mark sign is used to separate path and query parameters.
+    //In this, there are two query parameters--appid,units
+    //example::https://example.com/articles?sort=ASC&page=2
+
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            locationElement.textContent = data.name;
+            temperatureElement.textContent = `${Math.round(data.main.temp)}°C`;
+            descriptionElement.textContent = data.weather[0].description;
+        })
+        .catch(error => {
+            console.error('Error fetching weather data:', error);
+        });
+}
+
