@@ -126,6 +126,7 @@ promise.
 
 
 <<WEATHER REPORT WEBPAGE>>
+
 **************
 | Index.html |
 **************
@@ -202,7 +203,7 @@ button {
 | script.js |
 *************
 
-const apiKey = '653968ca99e50f93307d8be02d8a4a25';
+const apiKey = '**************************';
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
 const locationInput = document.getElementById('locationInput');
