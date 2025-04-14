@@ -1,0 +1,95 @@
+Nodejs
+
+~Node.js is an open-source, cross-platform JavaScript runtime environment and 
+  library for running web applications outside the client's browser. 
+~Ryan Dahl developed it in 2009, and its latest iteration, version 15.14, 
+  was released in April 2021. 
+~Developers use Node.js to create server-side web applications, and it is perfect 
+  for data-intensive applications since it uses an asynchronous, event-driven model.
+There are more than 50,000 bundles available in the Node Package Manager and for that
+  reason developers can import any of the packages any time according to their needed 
+  functionality for which a lot of time is saved.
+
+Features of NodeJs
+Asynchronous in Nature and Event driven:
+    The servers made with the NodeJs never waits for the from an API. Without waiting for
+    the data from the API, it directly moves to the next API. So all the APIs of NodeJS are totally non-blocking in nature.
+Single Threaded Architecture:
+    With event looping, a single threaded architecture is followed by NodeJs and for this architecture makes NodeJs more scalable.
+Scalable:
+    NodeJs is that it can partition the applications horizontally and this partition procedure is mainly achieved by
+    it due to the use of child processes.
+Quick Execution Time for Code:
+    V8 JavaScript runtime motor is used by NodeJs and this is also used by Google chrome. 
+Compatibility on the Cross Platforms:
+Different types of systems like Windows, UNIX, LINUX, MacOS and other mobile devices can use NodeJs. 
+
+Applications of Node.js
+Web Servers,Real-Time Applications,APIs and Microservices,Single-Page Applications (SPAs),Streaming Applications,Internet of Things (IoT).
+
+in 2025, there are 15+ popular companies who are using NodeJs .
+
+Companies like NASA, Trello, Netflix, PayPal, LinkedIn, Walmart, Uber, Twitter, Yahoo, eBay, GoDaddy etc are using NodeJs.
+
+Installation of NodeJS and NPM:
+
+Installation of NodeJS and NPM is straightforward using the installer package available at NodeJS official web site.
+
+Download the installer from NodeJS WebSite.
+Run the installer.
+Follow the installer steps, agree the license agreement and click the next button.
+
+Now, test NodeJS by printing its version using the following command in Command Prompt:
+
+> node -v
+
+and test npm by printing its version using command
+
+> npm -v
+
+Simple way to test nodeJS work in your system is to create a javascript file which print a message.
+
+Lets create test.js file
+
+/*test.js file*/
+console.log("Node is working");
+
+Run the test.js file using Node command > node test.js in command prompt.
+
+>node test.js
+OUTPUT:
+
+
+Node Package Module
+NPM is the package module which helps javascript developers load dependencies effectively. 
+To load dependencies we just have to run a command in command prompt:
+
+> npm install
+
+This command is finding a json file named as package.json in root directory to install all dependencies defined in the file.
+
+Basic Example
+Create a server.js javascript file with following code
+
+/*server.js*/
+
+const http = require('http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer(function(req, res) {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World\n');
+});
+
+server.listen(port, hostname, function() {
+  console.log('Server running at http://'+ hostname + ':' + port + '/');
+});
+
+Now Run server.js file un node using command
+
+> node server
+Open a browser and enter url https://127.0.0.1:3000/. The browser will display Hello World message on the screen.
+
