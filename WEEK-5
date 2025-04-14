@@ -1,0 +1,113 @@
+Create an xml for the bookstore. Validate the same using both DTD and XSD.
+
+1. Create an XML file for a bookstore
+2. Create a DTD (Document Type Definition) to validate it
+3. Create an XSD (XML Schema Definition) to validate it
+
+What is XML?
+XML stands for eXtensible Markup Language.
+It's a simple, text-based format used to store and transport data — often used in web services, 
+configuration files, data sharing, etc.
+
+Common Uses of XML
+ Web APIs (like SOAP or RSS feeds)
+ Configuration files (.xml in Android, Maven, Spring, etc.)
+ Data exchange between systems
+ Storing structured data (books, employees, invoices)
+
+XML Rules
+ One root element only
+ All tags must be closed
+ XML is case-sensitive (<Name> ≠ <name>)
+ Attributes must be in quotes
+ Data must be well-formed (no unescaped <, &, etc.)
+
+To Validate XML.
+You can validate XML using:
+  DTD – simpler structure validation
+  XSD – more powerful, typed validation
+
+  DTD stands for Document Type Definition.
+    It defines the structure and rules for an XML file — what elements are allowed, 
+    their order, what attributes they can have, etc.
+    ->used to validate that your XML follows a certain structure
+    ->Helps catch errors early (e.g., missing required elements)
+    ->Ensures consistency across XML documents
+  XSD stands for XML Schema Definition.
+    It defines the structure, data types, and constraints for XML documents — similar to 
+    DTD but much more powerful and precise. XSD allows you to specify the data types of 
+    elements and attributes (e.g., string, integer, date, etc.). 
+
+*****************
+| bookstore.xml |
+*****************
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore SYSTEM "bookstore.dtd">
+<bookstore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="bookstore.xsd">
+
+  <book category="fiction">
+    <title lang="en">The Alchemist</title>
+    <author>Paulo Coelho</author>
+    <year>1988</year>
+    <price>12.99</price>
+  </book>
+
+  <book category="science">
+    <title lang="en">A Brief History of Time</title>
+    <author>Stephen Hawking</author>
+    <year>1988</year>
+    <price>15.00</price>
+  </book>
+
+</bookstore>
+
+*****************
+| bookstore.dtd |
+*****************
+
+<!ELEMENT bookstore (book+)>
+<!ELEMENT book (title, author, year, price)>
+<!ATTLIST book category CDATA #REQUIRED>
+
+<!ELEMENT title (#PCDATA)>
+<!ATTLIST title lang CDATA #REQUIRED>
+
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+
+*****************
+| bookstore.xsd |
+*****************
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="bookstore">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="book" maxOccurs="unbounded" minOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="title">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="lang" type="xs:string" use="required"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="author" type="xs:string"/>
+              <xs:element name="year" type="xs:gYear"/>
+              <xs:element name="price" type="xs:decimal"/>
+            </xs:sequence>
+            <xs:attribute name="category" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
+
