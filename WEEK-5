@@ -9,7 +9,7 @@ XML stands for eXtensible Markup Language.
 It's a simple, text-based format used to store and transport data — often used in web services, 
 configuration files, data sharing, etc.
 
-Common Uses of XML
+Common Uses of XML 
  Web APIs (like SOAP or RSS feeds)
  Configuration files (.xml in Android, Maven, Spring, etc.)
  Data exchange between systems
