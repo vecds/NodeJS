@@ -1,0 +1,27 @@
+7. Create a custom server using http module and explore the other modules of Node JS like OS, path, event.
+
+*************
+| osinfo.js |
+*************
+
+
+const http = require('http');
+// Create an HTTP server
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Hello, Custom Server!');
+});
+
+// Set the port for the server to listen on
+const port = 3000;  //any portnumber of your choice
+const os = require('os');
+// Display information about the operating system
+console.log('Operating System Information:');
+console.log(`Platform: ${os.platform()}`);
+console.log(`Architecture: ${os.arch()}`);
+console.log(`CPU Cores: ${os.cpus().length}`);
+console.log(`Total Memory: ${(os.totalmem()/ 1024 / 1024).toFixed(2)} MB`);
+// Start the server and listen on the specified port
+server.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+});
